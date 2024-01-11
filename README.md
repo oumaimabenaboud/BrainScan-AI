@@ -73,7 +73,6 @@ The training process incorporates validation data and employs decay reduction me
 2. Ensure the path to the saved model file in the code matches the actual location in the web app.
 
 ## User Interface
-Certainly! Here's the table with three images in each row:
 
 | Landing Page | About Us Section | Team Section |
 | --- | --- | --- |
