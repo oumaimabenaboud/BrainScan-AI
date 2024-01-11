@@ -10,6 +10,7 @@ BrainScan AI is a web application providing an innovative solution for the detec
   - [Key Model Steps](#key-model-steps)
 - [Deployment](#deployment)
 - [User Interface](#user-interface)
+- [Setup Instructions](#setup-instructions)
 
 ## Overview
 
@@ -81,3 +82,35 @@ The training process incorporates validation data and employs decay reduction me
 | Contact Us Section | MRI Image Upload Interface | Tumor Detection Result Display |
 | --- | --- | --- |
 | ![Contact Us](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/63fa017e-55f0-4af0-896a-0f09e1b63aff) | ![MRI Image Upload](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/5e62c640-d718-4394-a94c-b751fffa0512) | ![Tumor Detection Result](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/36dde5dd-33bc-42b5-8744-9b49da2d782b) |
+
+## Setup Instructions
+
+Follow the steps below to set up the project environment and install the required dependencies.
+
+### Step 1: Install Virtual Environment Wrapper (Windows)
+
+```bash
+py -m pip install virtualenvwrapper-win
+```
+
+### Step 2: Create Virtual Environment
+
+```bash
+py -m venv myvenv
+```
+
+### Step 3: Activate Virtual Environment
+
+```bash
+myvenv\Scripts\activate
+```
+
+### Step 4: Install Dependencies
+
+```bash
+py -m pip install -r requirements.txt
+```
+
+These commands create a virtual environment named "myvenv" and activate it. Then, it installs the project dependencies listed in the "requirements.txt" file.
+
+Now, your environment is set up, and you are ready to work on the project.
