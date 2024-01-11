@@ -4,7 +4,7 @@ BrainScan AI is a web application providing an innovative solution for the detec
 
 - [Overview](#overview)
 - [Usage](#usage)
-- [DataSet Description](#dataset-description)
+- [Dataset](#dataset)
 - [AI Model Development](#ai-model-development)
   - [Model Architecture](#model-architecture)
   - [Key Model Steps](#key-model-steps)
@@ -19,15 +19,17 @@ BrainScan AI provides a fast, efficient, and accessible solution for detecting b
 
 Users can upload a brain MRI image to the website, which will then be analyzed using a pre-trained AI model to detect tumors. The output includes the detection result (whether a tumor is present or not) and its classification.
 
-## DataSet Description
+## Dataset
+The dataset used in this project can be accessed via the following link: [Brain Tumor Classification DataSet](https://github.com/SartajBhuvaji/Brain-Tumor-Classification-DataSet).
 
-The dataset used in this project comprises images of brain tumors categorized into four classes:
+This dataset includes images of brain tumors categorized into four classes:
+
 1. Glioma Tumor
 2. Meningioma Tumor
 3. Pituitary Tumor
 4. No Tumor Detected
 
-There are approximately 500 images in each class, totaling 2000 images in the dataset. The images, sourced from an open repository, have a resolution of 150x150 pixels.
+Approximately 500 images are available for each class, resulting in a total of 2000 images in the dataset. The images have a resolution of 150x150 pixels and were obtained from an open repository.
 
 ## AI Model Development
 
@@ -62,13 +64,13 @@ The training process incorporates validation data and employs decay reduction me
 
 ## Deployment
 
-To integrate the brain tumor detection CNN model into our website, the following general steps were followed:
+### Model Saving:
+1. Use Keras' `model.save()` in the notebook to save the trained model as an .h5 file.
+2. Transfer the saved .h5 file to a folder in your web app.
 
-1. **Model Saving:**
-   - Utilize Keras' `model.save()` function to save the trained model as an .h5 file.
-
-2. **Model Loading:**
-   - Load the .h5 file on your web server using Keras' `keras.models.load_model()` function, which loads a previously saved model from a file.
+### Model Loading:
+1. In your web app's `views.py`, use `keras.models.load_model()` to load the saved model.
+2. Ensure the path to the saved model file in the code matches the actual location in the web app.
 
 ## User Interface
 Certainly! Here's the table with three images in each row:
