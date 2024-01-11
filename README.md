@@ -1,6 +1,6 @@
 # BrainScan-AI
 
-BrainScan AI is a web application providing an innovative solution for the detection of brain tumors using artificial intelligence (AI). This repository contains the code and resources for the BrainScan AI project.
+BrainScan AI is a web application providing an innovative solution for the detection of brain tumors using artificial intelligence (AI).
 
 - [Overview](#overview)
 - [Usage](#usage)
