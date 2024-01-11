@@ -71,15 +71,12 @@ To integrate the brain tumor detection CNN model into our website, the following
    - Load the .h5 file on your web server using Keras' `keras.models.load_model()` function, which loads a previously saved model from a file.
 
 ## User Interface
-1. Landing Page![1](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/cdd81187-7128-456f-9f4b-b288ea4e107c)
+Certainly! Here's the table with three images in each row:
 
-2. About Us Section![2](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/8d0d473b-2a9e-47c6-b03a-7a555144f91a)
+| Landing Page | About Us Section | Team Section |
+| --- | --- | --- |
+| ![Landing Page](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/cdd81187-7128-456f-9f4b-b288ea4e107c) | ![About Us](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/8d0d473b-2a9e-47c6-b03a-7a555144f91a) | ![Team](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/05fd5d27-d3da-4b31-ae0a-5a53a6115fd9) |
 
-3. Team Section![3](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/05fd5d27-d3da-4b31-ae0a-5a53a6115fd9)
-
-4. Contact Us Section![4](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/63fa017e-55f0-4af0-896a-0f09e1b63aff)
-
-5. MRI Image Upload Interface![5](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/5e62c640-d718-4394-a94c-b751fffa0512)
-
-6. Tumor Detection Result Display![6](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/36dde5dd-33bc-42b5-8744-9b49da2d782b)
-
+| Contact Us Section | MRI Image Upload Interface | Tumor Detection Result Display |
+| --- | --- | --- |
+| ![Contact Us](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/63fa017e-55f0-4af0-896a-0f09e1b63aff) | ![MRI Image Upload](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/5e62c640-d718-4394-a94c-b751fffa0512) | ![Tumor Detection Result](https://github.com/oumaimabenaboud/BrainScan-AI/assets/120368654/36dde5dd-33bc-42b5-8744-9b49da2d782b) |
