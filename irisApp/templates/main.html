@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iris Application</title>
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<h1>Iris Django Application</h1>
+<hr>
+<input type="file" name="filePath" accept="image/*">
+<body>
+    <label class="file">
+        <input type="file" id="file" aria-label="File browser example">
+        <span class="file-custom"></span>
+      </label>
+</body>
+  
+  </div>
+<h1>Upload image for classification</h1>
+<form method="post" enctype = "multipart/form-data" action="predictimage">
+{% csrf_token %}
+Image <input type="file" name="filePath" accept="image/*"><br>
+<input type="submit">
+<img src={{filePathName}} alt = 'imagename'>
+{{filePathName}}
+<h2>The Model predicts that it is : {{prediction}}</h2>
+</form>
+</body>
+<script>
+</script>
+</html>

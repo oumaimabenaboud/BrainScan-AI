@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Brain Tumor Detection</title>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
+	<script src="{% static 'js/modernizr.js' %}"></script>
+
+</head>
+<body>
+	
+	<!-- ====================================================header section -->
+	<header class="top-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-5 header-logo">
+					<br>
+					<a href="{% url 'home' %}"><img src="{% static 'img/logo5.svg' %}" alt="" class="img-responsive logo"></a>
+				</div>
+
+				<div class="col-md-7">
+					<nav class="navbar navbar-default">
+					  <div class="container-fluid nav-bar">
+					    <!-- Brand and toggle get grouped for better mobile display -->
+					    <div class="navbar-header">
+					      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					      </button>
+					    </div>
+
+					    <!-- Collect the nav links, forms, and other content for toggling -->
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					      
+					      <ul class="nav navbar-nav navbar-right">
+					        <li><a class="menu active" href="#home" >Accueil</a></li>
+							<li><a class="menu" href="#service">Nos services </a></li>
+					        <li><a class="menu" href="#about">à propos de nous</a></li>
+					        <li><a class="menu" href="#team">Notre équipe</a></li>
+					        <li><a class="menu" href="#contact"> Contactez-nous</a></li>
+					      </ul>
+					    </div><!-- /navbar-collapse -->
+					  </div><!-- / .container-fluid -->
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header> <!-- end of header area -->
+
+	<section class="slider" id="home">
+		<div class="container-fluid">
+			<div class="row">
+			    <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
+					<div class="header-backup"></div>
+			        <!-- Wrapper for slides -->
+			        <div class="carousel-inner" role="listbox">
+			            <div class="item active ">
+			            	<img src="{% static 'img/slide2B.jpg' %}" alt="">
+			                <div class="carousel-caption">
+		               			<h1>BrainScan AI</h1>
+		               			<p>Révolutionnez la détection des tumeurs cérébrales avec l'IA</p>
+		               			<a href="#service "><button>Commencer le test</button></a>
+			                </div>
+			            </div>
+
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</section><!-- end of slider section -->
+
+		<!-- service section starts here -->
+		<section class="service text-center" id="service">
+			<div class="container">
+				<h2>Nos services</h2>
+				<div class="row">
+					
+					<div class="col-1">
+						<h4>Importer l'image pour la prédiction</h4>
+						<form method="post" enctype = "multipart/form-data" action="predictimage">
+						{% csrf_token %}
+						<input src={{filePathName}} alt = 'imagename' name="filePath" accept="image/*" type="file" hidden>
+						<!-- <input src={{filePathName}} alt = 'imagename' type="file" name="filePath" accept="image/*"><br> -->
+						<div class="drag-area">
+							<!-- <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>							 -->
+							<!-- <button>Browse File</button> -->
+							<img src={{filePathName}} alt = 'imagename'>
+						  </div>
+						<input id="submit" name="submit" type="submit">
+
+						
+					</div>
+	
+					<div class="col-2">
+						<h3>{{prediction}}</h3>
+						<p>{{description}}</p>
+					</div>
+				</div>
+			</div>
+		</section><!-- end of service section -->
+	
+
+	<!-- about section -->
+	<section class="about text-center" id="about">
+		<div class="container">
+			<div class="row">
+				<h2>à propos de nous</h2>
+				<h4>Détection précoce, diagnostic précis et meilleurs résultats thérapeutiques</h4>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-about-detail clearfix">
+						<div class="about-img">
+							<img class="img-responsive" src="{% static 'img/AdobeStock_236237534-scaled.jpeg' %}" alt="">
+						</div>
+						<div class="about-details">
+							<div class="pentagon-text">
+								<h1>A</h1>
+							</div>
+							<p>Analyse d'images et diagnostic des tumeurs cérébrales grâce à la technologie de l'IA.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-about-detail">
+						<div class="about-img">
+							<img class="img-responsive" src="{% static 'img/radiology-v2-slideshow_1800x660-1.jpg' %}" alt="">
+						</div>
+						<div class="about-details">
+							<div class="pentagon-text">
+								<h1>P</h1>
+							</div>
+							<p>Prédiction de la progression de la maladie</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-about-detail">
+						<div class="about-img">
+							<img class="img-responsive" src="{% static 'img/TRM.png' %}" alt="">
+						</div>
+						<div class="about-details">
+							<div class="pentagon-text">
+								<h1>F</h1>
+							</div>
+							<p>Fournir des ressources éducatives et des informations sur les tumeurs cérébrales et les options de traitement.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- end of about section -->
+
+
+
+
+	<!-- SJANI MICHAAAGE   -->
+	<section class="team_section layout_padding" id="team">
+        <div class="container reveal fade-right">
+            <div class="container">
+                <h2 class="title">L'équipe</h2>
+            </div>
+            <div class="container">
+                <div class="team_card-container layout_padding2">
+                    <div class="team_card">
+                            <!-- <img src="{% static 'img/yassine2.jpg' %}" alt=""> -->
+							<div class="team_img-box">
+								<!-- <img src="{% static 'img/khalid.jpg' %}" alt=""> -->
+								<i class="fa-solid fa-user-graduate"></i>
+	
+							</div>
+                        <div class="team_detail-box">
+                            <h5 class="hover-underline-animation">
+                                OURARA YASSINE
+                            </h5>
+                            <!-- <h4 id="sc">
+                                Dev. Team
+                            </h4><br> -->
+
+                        </div>
+                    </div>
+                    <div class="team_card">
+                        <div class="team_img-box">
+                            <!-- <img src="{% static 'img/khalid.jpg' %}" alt=""> -->
+							<i class="fa-solid fa-user-graduate"></i>
+
+                        </div>
+                        <div class="team_detail-box">
+                            <h5 class="hover-underline-animation">
+                                MHASNI KHALID
+                            </h5>
+                            <!-- <h4 id="sc">
+                                Dev. Team
+                            </h4><br> -->
+
+                        </div>
+                    </div>
+                    <div class="team_card">
+                        <div class="team_img-box">
+                            <!-- <img src="{% static 'img/oum.jpg' %}" alt=""> -->
+							<i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <div class="team_detail-box">
+                            <h5 class="hover-underline-animation">
+                                BENABOUD OUMAIMA
+                            </h5>
+                            <!-- <h4 id="sc">
+                                P. Owner
+                            </h4><br> -->
+                            
+                        </div>
+                    </div>
+                    <div class="team_card">
+                        <div class="team_img-box">
+                            <!-- <img src="{% static 'img/ssalima.jpeg' %}" alt=""> -->
+							<i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <div class="team_detail-box">
+                            <h5 class="hover-underline-animation">
+                                TAHIRI SALIMA
+                            </h5>
+                            <!-- <h4 id="sc">
+                                SC. Master
+                            </h4><br> -->
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+	<!-- SALA MICHAAAGE  -->
+
+
+	<!-- contact section starts here -->
+	<section class="contact" id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="contact-caption clearfix">
+					<div class="contact-heading text-center">
+						<h2>Contactez-nous</h2>
+					</div>
+					<div class="col-md-5 contact-info text-left">
+						<h3>Contact</h3>
+						<div class="info-detail">
+							<ul><li><i class="fa fa-calendar"></i><span>Lundi - Vendredi:</span> 9h30 à 18h30</li></ul>
+							<ul><li><i class="fa fa-phone"></i><span>Téléphone:</span> (+212) 987-1235</li></ul>
+							<ul><li><i class="fa fa-fax"></i><span>Fax:</span> (+212) 984-1234</li></ul>
+							<ul><li><i class="fa fa-envelope"></i><span>Email:</span> miaad@gmail.com</li></ul>
+						</div>
+					</div>
+					<div class="col-md-6 col-md-offset-1 contact-form">
+						<h3>LAISSEZ-NOUS UN MESSAGE</h3>
+
+						<form class="form">
+							<input class="name" type="text" placeholder="Name">
+							<input class="email" type="email" placeholder="Email">
+							<input class="phone" type="text" placeholder="Phone No:">
+							<textarea class="message" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+							<input  class="submit-btn" type="submit" value="SUBMIT">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- end of contact section -->
+
+
+
+	<!-- script tags
+	============================================================= -->
+	<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="{% static 'js/gmaps.js' %}"></script>
+	<script src="{% static 'js/smoothscroll.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Django==4.1.3
+virtualenvwrapper-win
+scikit-learn
+pandas
+keras
+tensorflow
+PILLOW
+opencv-python
